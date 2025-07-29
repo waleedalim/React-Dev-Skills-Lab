@@ -13,9 +13,8 @@ Create a new React app named "react-dev-skills" and a github repository.
 
 Code the app so that it renders the following UI:
 
-    <img src="https://i.imgur.com/z1ZMjrG.png">
-
-    > Feel free to style different colors, however, layout should be similar.Using the following component hierarchy:
+<img src="https://i.imgur.com/z1ZMjrG.png">
+> Feel free to style different colors, however, layout should be similar.Using the following component hierarchy:
 
 <img src="https://i.imgur.com/Z7yRF8b.png">
 
