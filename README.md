@@ -1,6 +1,4 @@
-<img src="https://i.imgur.com/pg98OTd.png">
-
-# React Dev Skills Lab - Part 1
+# React Dev Skills Lab 
 
 ## Intro
 
