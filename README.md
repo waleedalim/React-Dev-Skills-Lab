@@ -1,25 +1,32 @@
-# React Dev Skills Lab
+# React + TypeScript + Vite
 
-#### Intro
+This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
 
-Now that you've learned a bit about components in React, let's practice defining and rendering a few more. This lab is a repetition exercise, meant to reinforce what you covered during the React Intro and Components lesson rather than introduce anything new.
+Currently, two official plugins are available:
 
-#### Setup
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
-Get your project scaffolded and running before you start on the exercise.
+## React Compiler
 
-1. Clone this repo and `cd` into it.
-2. Run `npm create vite@latest . -- --template react-ts` to scaffold the project into the current directory. If prompted about the directory not being empty, choose to keep your existing files.
-3. Remove the cloned git history with `rm -rf .git`, then run `git init` to start a fresh repo and connect it to your own remote with `git remote add origin <your-repo-url>`.
-4. Run `npm install` to install the project's dependencies. Scaffolding the project only writes the files, it doesn't download the packages those files depend on, so this step is required before anything will run.
-5. Run `npm run dev` to start the dev server.
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-#### Exercise
+## Expanding the Oxlint configuration
 
-The goal of this lab is to put in a rep doing everything you did during the React Intro and Components lesson. Code the app so that it renders the following UI:
+If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
 
-![React Dev Skills UI](./assets/react-dev-skills-ui.png)
+```json
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "plugins": ["react", "typescript", "oxc"],
+  "options": {
+    "typeAware": true
+  },
+  "rules": {
+    "react/rules-of-hooks": "error",
+    "react/only-export-components": ["warn", { "allowConstantExport": true }]
+  }
+}
+```
 
-The page displays a heading, a list of skill cards, and a form for adding a new skill. Each skill card shows the name of the skill alongside a pill-shaped badge with its level. The form beneath the list has fields for a skill name and a level, along with an Add Skill button.
-
-Build this out using functional components, breaking the UI into pieces that mirror what you see on the page rather than cramming everything into a single component.
+See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
